@@ -1,7 +1,7 @@
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { collection, doc, getDocs, getFirestore, QuerySnapshot } from "firebase/firestore";
+import { collection, doc, getDocs, getFirestore } from "firebase/firestore";
 export const ItemListContainer = () => {
   const [Loading, setLoading] = useState(true);
 
@@ -10,8 +10,8 @@ export const ItemListContainer = () => {
   useEffect(() => {
     const dataBase = getFirestore();
     const computerCollection = collection(dataBase, "pc");
-    getDocs(computerCollection).then((QuerySnapshot) => {
-      const computers = QuerySnapshot.docs.map((doc) => ({
+    getDocs(computerCollection).then((querySnapshot) => {
+      const computers = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }) )
