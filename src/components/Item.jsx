@@ -4,8 +4,7 @@ import { useContext } from "react";
 import { Utils } from "../context/UtilsContext";
 import img from "../assets/pcGamer.png";
 
-const Item = ({product}) => {
-    const {id, title, priceArs} = product;
+const Item = ({id, title, priceArs}) => {
     const { formatPrice } = useContext(Utils);
   return (
     <>

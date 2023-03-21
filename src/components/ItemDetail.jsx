@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { Utils } from "../context/UtilsContext";
 import image from "../assets/pcGamer.png";
 
-const ItemDetail = () => {
-    const { id, title, descripton, priceArs, stock } = product;
+const ItemDetail = ({ id, title, descripton, priceArs, stock }) => {
+    //const { id, title, descripton, priceArs, stock } = product;
     const { formatPrice } = useContext(Utils);
     return (
         <>
