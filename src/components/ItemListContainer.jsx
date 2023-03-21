@@ -9,7 +9,7 @@ export const ItemListContainer = () => {
   const {categoria} = useParams();
   useEffect(() => {
     const dataBase = getFirestore();
-    const computerCollection = collection(dataBase, "pc");
+    const computerCollection = collection(dataBase, "pcGamers");
     getDocs(computerCollection).then((querySnapshot) => {
       const computers = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
