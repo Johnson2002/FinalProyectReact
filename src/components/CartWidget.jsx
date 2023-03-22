@@ -7,24 +7,27 @@ const CartWidget = () => {
   const { cart } = useContext(CartContext);
   return (
     <>
-      <Box p="6">
-        <Box pl="4">
-          <Link to={"/cart"}>
-            <Button
-              colorScheme="whatsapp"
-              variant="ghost"
-              borderWidth="2px"
-              borderRadius="lg"
-              borderColor="whatsapp.300"
-            >
-              <i className="fa-sharp fa-solid fa-cart-shopping paddingIcons iconoAgrandado"></i>
-              <Badge p="1" ml="1" colorScheme="twitter">
-                {cart.length}
-              </Badge>
-            </Button>
-          </Link>
+      <div className="cartWidgetContainer">
+        <Box p="6">
+          <Box pl="4">
+            <Link to={"/cart"}>
+              <Button
+                colorScheme="green"
+                variant="ghost"
+                borderWidth="2px"
+                borderRadius="lg"
+                borderColor="white"
+              >
+                <i className="fa-sharp fa-solid fa-cart-shopping paddingIcons iconoAgrandado"></i>
+                <Badge p="1" ml="1" colorScheme="twitter">
+                  {cart.length}
+                </Badge>
+              </Button>
+            </Link>
+          </Box>
         </Box>
-      </Box>
+      </div>
+
     </>
   );
 };

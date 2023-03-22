@@ -27,20 +27,23 @@ const Order = () => {
     }
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Nombre y apellido"
-                    onChange={(e) => setNombre(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Email"
-                    onChange={(e) => setGamil(e.target.value)}
-                />
-                <button type="submit">Enviar</button>
-                <p>Orden Id {idOrder}</p>
-            </form>
+                <form className="FormContainer" onSubmit={handleSubmit}>
+                    <input
+                        className="FormContainer"
+                        type="text"
+                        placeholder="Nombre y apellido"
+                        onChange={(e) => setNombre(e.target.value)}
+                    />
+                    <input
+                        className="FormContainer"
+                        type="text"
+                        placeholder="Email"
+                        onChange={(e) => setGamil(e.target.value)}
+                    />
+                    <button type="submit">Enviar</button>
+                    <p>Orden Id {idOrder}</p>
+                </form>
+
         </>
     )
 }

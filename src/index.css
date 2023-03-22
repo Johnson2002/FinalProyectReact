@@ -51,3 +51,10 @@
     color: black;
     transition: all ease 1s;
 }
+
+.FormContainer {
+    display: flex;
+    flex-flow: column, wrap;
+    justify-content: center;
+    background-color: aqua;
+}

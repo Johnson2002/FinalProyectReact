@@ -8,7 +8,7 @@ const Item = ({id, title, priceArs}) => {
     const { formatPrice } = useContext(Utils);
   return (
     <>
-        <Card bg={"black.200"}>
+        <Card bg={"black.400"}>
             <CardBody p={4} marginTop="10px">
                 <Image src={img} alt={title}/>
                 <Stack>

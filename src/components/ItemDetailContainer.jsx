@@ -6,26 +6,26 @@ import { getFirestore, doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState([]);
-
+    const[loading, setLoading]= useState(true)
+    const {id}= useParams()
   useEffect(() => {
     const db = getFirestore();
-    
     const  pcCollection = collection(db, "pcGamers");
+    const docReference =  doc(pcCollection, id)
+    getDoc(docReference)
+    .then((res)=>{
+        setData({id:res.id, ...res.data()})
+    })
+    .catch((error)=> console.log(error))
+    .finally(()=> setLoading(false))
+  }, [id]);
 
-    getDoc(pcCollection).then((snapshot) => {
-      const computers = snapshot.doc.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setData(computers);
 
-    });
   
-  }, []);
 
   return (
     <>
-    {Loading ? <Loading /> : <ItemDetail data={data}/>} 
+    {loading ? <Loading /> : <ItemDetail data={data}/>} 
     </>
   )
 }

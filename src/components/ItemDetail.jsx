@@ -4,8 +4,10 @@ import { useContext } from "react";
 import { Utils } from "../context/UtilsContext";
 import image from "../assets/pcGamer.png";
 
-const ItemDetail = ({ id, title, descripton, priceArs, stock }) => {
-    //const { id, title, descripton, priceArs, stock } = product;
+const ItemDetail = ({ data }) => {
+    console.log(data)
+    const { id, marca, descripcion, precio, stock } = data;
+    
     const { formatPrice } = useContext(Utils);
     return (
         <>
@@ -19,28 +21,28 @@ const ItemDetail = ({ id, title, descripton, priceArs, stock }) => {
                     objectFit="cover"
                     maxW={{ base: "100%", sm: "500px" }}
                     src={image}
-                    alt={title}
+                    alt={marca}
                     className="ImgDetail"
                 />
 
                 <Stack>
                     <CardBody>
                         <Heading size={"2xl"} className="productTitle">
-                            {title}
+                            {marca}
                         </Heading>
-                        <Text py={"10"}>{descripton}</Text>
+                        <Text py={"10"}>{descripcion}</Text>
                         <Badge colorScheme={"gray"} variant="subtle">
                             <Text color={"white"} fontFamily="monospace" fontSize={"3xl"}>
-                                $ {formatPrice(priceArs)}
+                                $ {formatPrice(precio)}
                             </Text>
                         </Badge>
                     </CardBody>
                     <CardFooter>
                         <ItemCount
-                            stock = {stock}
+                            stockDisponible = {stock}
                             id = {id}
-                            title = {title}
-                            priceArs ={priceArs}
+                            marca = {marca}
+                            priceArs ={precio}
                             image = {image}
                         />
                     </CardFooter>
