@@ -9,7 +9,7 @@ const ItemList = ({ pc }) => {
         key={compus.id}
         id={compus.id}
         name={compus.nameProduct}
-        description={compus.description}
+        descripcion={compus.descripcion}
         priceArs={compus.priceArs}
         stock={compus.stock}
       />

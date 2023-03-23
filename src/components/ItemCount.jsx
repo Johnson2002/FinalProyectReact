@@ -6,7 +6,7 @@ import { Utils } from "../context/UtilsContext";
 export const ItemCount = ({stockDisponible, id, priceArs, title}) => {
     const [count, setCount] = useState(0);
     const [stock, setStock] =useState(stockDisponible);
-    const [restart, setRestart] = useState(true);
+    const [restart, setRestart] = useState(false);
     const [counting, setCounting] = useState(
         stockDisponible > 0 ? false : true
     );

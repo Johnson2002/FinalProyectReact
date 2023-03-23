@@ -54,7 +54,77 @@
 
 .FormContainer {
     display: flex;
-    flex-flow: column, wrap;
     justify-content: center;
-    background-color: aqua;
+    align-items: center;
+    background-color: black;
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    gap: 20px;
+    margin: 15px;
+    color: white;
+}
+
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.Heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+}
+
+.title{
+    font-family: 'Courier New', Courier, monospace;
+}   
+
+p{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.welcomeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerImg{
+    margin: 40px;
+}
+
+.itemDetailProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.cardBody{
+    font-style: italic;
+    font-weight: bolder;
 }

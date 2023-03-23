@@ -1,4 +1,4 @@
-import { Card, Image, Stack, CardBody, Heading, Text, CardFooter, Badge } from "@chakra-ui/react";
+import { Card, Image, Stack, CardBody, Heading, Text, CardFooter, Badge, Divider } from "@chakra-ui/react";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import { Utils } from "../context/UtilsContext";
@@ -11,11 +11,12 @@ const ItemDetail = ({ data }) => {
     const { formatPrice } = useContext(Utils);
     return (
         <>
-            <Card direction={{ base: "column", sm: "row" }}
+            <Card direction={{ base: "row", sm: "nowrap" }}
                 overflow="hidden"
                 variant="outline"
                 className="itemDetailProduct"
-                bg={"black.200"}
+                bg={"white"}
+                border={"solid"}
             >
                 <Image
                     objectFit="cover"
@@ -26,13 +27,12 @@ const ItemDetail = ({ data }) => {
                 />
 
                 <Stack>
-                    <CardBody>
-                        <Heading size={"2xl"} className="productTitle">
+                    <CardBody className="cardBody">
+                        <Heading size={"3xl"} className="productTitle">
                             {marca}
                         </Heading>
-                        <Text py={"10"}>{descripcion}</Text>
-                        <Badge colorScheme={"gray"} variant="subtle">
-                            <Text color={"white"} fontFamily="monospace" fontSize={"3xl"}>
+                        <Badge colorScheme={"black"} variant="subtle">
+                            <Text color={"black"} fontFamily="monospace" fontSize={"3xl"}>
                                 $ {formatPrice(precio)}
                             </Text>
                         </Badge>
@@ -42,8 +42,9 @@ const ItemDetail = ({ data }) => {
                             stockDisponible = {stock}
                             id = {id}
                             marca = {marca}
-                            priceArs ={precio}
+                            precioArs ={precio}
                             image = {image}
+                            descripcion = {descripcion}
                         />
                     </CardFooter>
                 </Stack>

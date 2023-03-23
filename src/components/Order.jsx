@@ -2,6 +2,7 @@ import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 import { useContext } from "react";
+import { Heading, Text } from "@chakra-ui/react";
 const Order = () => {
     const [idOrder, setOrder] = useState(null);
     const [nombre, setNombre] = useState("");
@@ -27,6 +28,12 @@ const Order = () => {
     }
     return (
         <>
+            <Heading className="Heading">
+                <Text className="title">
+                    Introduce tus datos para concretar la compra
+                </Text>
+            </Heading>
+            <div className="Container">
                 <form className="FormContainer" onSubmit={handleSubmit}>
                     <input
                         className="FormContainer"
@@ -40,10 +47,12 @@ const Order = () => {
                         placeholder="Email"
                         onChange={(e) => setGamil(e.target.value)}
                     />
-                    <button type="submit">Enviar</button>
-                    <p>Orden Id {idOrder}</p>
+                    <div className="Button">
+                        <button type="submit">Enviar</button>
+                    </div>
+                        <p>Orden Id: {idOrder}</p>
                 </form>
-
+            </div>
         </>
     )
 }
